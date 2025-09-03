@@ -2,41 +2,71 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* NutriSathi Design System - Nutrition-focused color palette */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Nutrition-themed color palette */
+    --background: 120 20% 98%;
+    --foreground: 120 25% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 120 25% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 120 25% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Green primary - represents health & nature */
+    --primary: 142 76% 36%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 142 76% 55%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Orange secondary - represents energy & vitality */
+    --secondary: 24 95% 53%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 120 20% 94%;
+    --muted-foreground: 120 15% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 60 95% 55%;
+    --accent-foreground: 120 25% 15%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 75% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 120 25% 88%;
+    --input: 120 25% 95%;
+    --ring: 142 76% 36%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
+
+    /* Nutrition-specific colors */
+    --protein: 220 85% 55%;
+    --carbs: 60 95% 55%;
+    --fat: 24 95% 53%;
+    --calories: 0 75% 60%;
+
+    /* Success states */
+    --success: 142 76% 36%;
+    --warning: 45 95% 55%;
+    --info: 210 85% 55%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(142 76% 36%), hsl(142 76% 55%));
+    --gradient-secondary: linear-gradient(135deg, hsl(24 95% 53%), hsl(45 95% 55%));
+    --gradient-hero: linear-gradient(135deg, hsl(142 76% 36%), hsl(24 95% 53%), hsl(60 95% 55%));
+    --gradient-subtle: linear-gradient(180deg, hsl(120 20% 98%), hsl(120 20% 95%));
+
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -2px hsl(142 76% 36% / 0.15);
+    --shadow-glow: 0 0 30px hsl(142 76% 55% / 0.3);
+    --shadow-card: 0 2px 10px -2px hsl(120 25% 15% / 0.1);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -56,33 +86,53 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* Dark mode with nature-inspired colors */
+    --background: 120 25% 8%;
+    --foreground: 120 20% 95%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 120 25% 12%;
+    --card-foreground: 120 20% 95%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 120 25% 12%;
+    --popover-foreground: 120 20% 95%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 142 76% 55%;
+    --primary-foreground: 120 25% 8%;
+    --primary-glow: 142 76% 70%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 24 95% 60%;
+    --secondary-foreground: 120 25% 8%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 120 25% 18%;
+    --muted-foreground: 120 15% 70%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 60 95% 65%;
+    --accent-foreground: 120 25% 8%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 75% 65%;
+    --destructive-foreground: 120 25% 8%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --border: 120 25% 22%;
+    --input: 120 25% 18%;
+    --ring: 142 76% 55%;
+
+    /* Dark mode nutrition colors */
+    --protein: 220 85% 65%;
+    --carbs: 60 95% 65%;
+    --fat: 24 95% 60%;
+    --calories: 0 75% 65%;
+
+    /* Dark gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(142 76% 45%), hsl(142 76% 65%));
+    --gradient-secondary: linear-gradient(135deg, hsl(24 95% 60%), hsl(45 95% 65%));
+    --gradient-hero: linear-gradient(135deg, hsl(142 76% 45%), hsl(24 95% 60%), hsl(60 95% 65%));
+    --gradient-subtle: linear-gradient(180deg, hsl(120 25% 8%), hsl(120 25% 12%));
+
+    /* Dark shadows */
+    --shadow-soft: 0 4px 20px -2px hsl(0 0% 0% / 0.3);
+    --shadow-glow: 0 0 30px hsl(142 76% 55% / 0.2);
+    --shadow-card: 0 2px 10px -2px hsl(0 0% 0% / 0.2);
+
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -100,6 +150,75 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
+    font-feature-settings: "rlig" 1, "calt" 1;
   }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-muted;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-muted-foreground/30 rounded-full;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-muted-foreground/50;
+  }
+}
+
+@layer components {
+  /* Hero gradient background */
+  .hero-gradient {
+    background: var(--gradient-hero);
+  }
+
+  .primary-gradient {
+    background: var(--gradient-primary);
+  }
+
+  .secondary-gradient {
+    background: var(--gradient-secondary);
+  }
+
+  /* Nutrition-specific colors for charts */
+  .protein-color { color: hsl(var(--protein)); }
+  .carbs-color { color: hsl(var(--carbs)); }
+  .fat-color { color: hsl(var(--fat)); }
+  .calories-color { color: hsl(var(--calories)); }
+
+  /* Glass effect */
+  .glass {
+    backdrop-filter: blur(12px);
+    background: hsla(var(--card) / 0.8);
+    border: 1px solid hsla(var(--border) / 0.5);
+  }
+
+  /* Smooth transitions */
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+
+  .transition-bounce {
+    transition: var(--transition-bounce);
+  }
+
+  /* Glow effects */
+  .glow-primary {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+}
 }
